@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SecondScreen extends StatefulWidget {
+class ScreenWithScale extends StatefulWidget {
+  final int animationDuration;
+  final Curve curve;
+
+  const ScreenWithScale(
+    this.animationDuration,
+    this.curve, {
+    Key key,
+  }) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
-    return _SecondScreenState();
+    return _ScreenWithScaleState();
   }
 }
 
-class _SecondScreenState extends State<SecondScreen> {
+class _ScreenWithScaleState extends State<ScreenWithScale> {
   double height = 100.0;
 
   @override
@@ -35,7 +44,8 @@ class _SecondScreenState extends State<SecondScreen> {
                 bottom: 0,
                 right: 0,
                 height: height,
-                duration: const Duration(milliseconds: 500),
+                curve: widget.curve,
+                duration: Duration(milliseconds: widget.animationDuration),
                 child: Container(
                   color: Colors.blue,
                   constraints: BoxConstraints.expand(),
