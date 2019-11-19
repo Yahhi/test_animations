@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_animations/come_from_sides_screen.dart';
 import 'package:test_animations/screen_with_scale.dart';
 
 void main() => runApp(MyApp());
@@ -211,6 +212,13 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: _showNextScreen,
             icon: Icon(Icons.chevron_right),
           ),
+          SizedBox(
+            height: 24,
+          ),
+          RaisedButton(
+            child: Text("OPEN CHAT"),
+            onPressed: _openChat,
+          )
         ],
       ),
     );
@@ -231,6 +239,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
     );
+  }
+
+  void _openChat() {
+    Navigator.push(
+        context,
+        InvisibleRoute(
+            page: ComeFromSidesScreen(selectedDuration, selectedCurve)));
   }
 }
 

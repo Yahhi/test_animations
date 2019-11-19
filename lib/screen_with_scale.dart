@@ -30,7 +30,7 @@ class _ScreenWithScaleState extends State<ScreenWithScale> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second screen"),
+        title: Text("Groving initial animation"),
       ),
       body: Container(
         constraints: BoxConstraints.expand(),
